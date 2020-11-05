@@ -37,8 +37,8 @@ public class ProductManager {
                 System.arraycopy(result, 0, tmp, 0, items.length);
                 tmp[tmp.length - 1] = product;
                 result = tmp;
-                }
             }
+        }
 
         return result;
     }
@@ -53,9 +53,7 @@ public class ProductManager {
             if (book.getAuthor().equalsIgnoreCase(search)) {
                 return true;
             }
-            return false;
         }
-
         if (product instanceof Smartphone) {
             Smartphone smartphone = (Smartphone) product;
             if (smartphone.getName().equalsIgnoreCase(search)) {
@@ -64,10 +62,12 @@ public class ProductManager {
             if (smartphone.getProducer().equalsIgnoreCase(search)) {
                 return true;
             }
-            return false;
         }
+        return false;
     }
 }
+
+
 
 
 

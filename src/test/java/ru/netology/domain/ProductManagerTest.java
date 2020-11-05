@@ -20,11 +20,12 @@ public class ProductManagerTest {
 
     @Test
     public void addBook(){
-        Product f = new Product(1,"f",1);
-        Product s = new Product(1,"s",1);
+        ProductManager manager = new ProductManager();
+
         manager.add(f);
-        Product[] actual = manager.add(f);
-        Product[] expected = new Product[][]{f};
+        Product[] actual = manager.getAll(f);
+        Product[] expected = new Product[]{f};
         assertArrayEquals(expected, actual);
     }
-}
+    }
+
