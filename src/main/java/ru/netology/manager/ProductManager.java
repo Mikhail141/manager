@@ -34,6 +34,10 @@ public class ProductManager {
         for (Product product: repository.findAll()) {
             if (matches(product, text)) {
                 Product[] tmp = new Product[result.length + 1];
+                for (int i = 0; i < tmp.length; i++) {
+                    Product product1 = tmp[i];
+                    
+                }
                 // используйте System.arraycopy, чтобы скопировать всё из result в tmp
                 tmp[tmp.length - 1] = product;
                 result = tmp;
