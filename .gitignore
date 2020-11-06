@@ -4,6 +4,7 @@ HELP.md
 .gradle
 build/
 target/
+.github
 
 ### STS ###
 .apt_generated
@@ -14,6 +15,7 @@ target/
 .springBeans
 .sts4-cache
 
+
 ### IntelliJ IDEA ###
 .idea
 *.iws
@@ -21,7 +23,7 @@ target/
 *.ipr
 out/
 *.config
-.github
+
 
 ### NetBeans ###
 /nbproject/private/
