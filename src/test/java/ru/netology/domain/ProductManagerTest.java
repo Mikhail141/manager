@@ -1,5 +1,6 @@
 package ru.netology.domain;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.manager.ProductManager;
 import ru.netology.repository.ProductRepository;
@@ -19,13 +20,10 @@ public class ProductManagerTest {
     Product smartphone3 = new Smartphone(1,"smartphone3",1000, "producer");
     Product smartphone4 = new Smartphone(1,"smartphone4",1000, "producer");
 
-
-
-
     @Test
     public void shouldSearchByName() {
         String search = "Kruso";
-        manager.add (Kruso);
+        manager.add(Kruso);
         Product[] actual = manager.searcyBy(search);
         Product[] expected = new Product[]{Kruso};
         assertArrayEquals(expected, actual);
@@ -43,11 +41,10 @@ public class ProductManagerTest {
 
     @Test
     public void shouldSearchByAuthorDefo() {
-        String search = "Defo";
-        manager.add(Storm);
+        String text = "Kruso";
         manager.add(Kruso);
-        Product[] actual = manager.searcyBy(search);
-        Product[] expected = new Product[]{Storm,Kruso};
+        Product[] actual = manager.searcyBy(text);
+        Product[] expected = new Product[]{Kruso};
         assertArrayEquals(expected, actual);
     }
 
@@ -61,21 +58,21 @@ public class ProductManagerTest {
     }
 
     @Test
-    public void shouldsearchNameIphone() {
-        String search = "Iphone";
-        manager.add(Iphone);
-        Product[] actual = manager.searcyBy(search);
-        Product[] expected = new Product[]{Iphone};
-        assertArrayEquals(expected, actual);
-    }
-
-    @Test
     public void shouldsearchNameProduser() {
         String search = "Apple";
         manager.add(Ipod);
         manager.add(Iphone);
         Product[] actual = manager.searcyBy(search);
         Product[] expected = new Product[]{Ipod,Iphone};
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldsearchName() {
+        String text = "Iphone";
+        manager.add(Iphone);
+        Product[] actual = manager.searcyBy(text);
+        Product[] expected = new Product[]{Iphone};
         assertArrayEquals(expected, actual);
     }
 
