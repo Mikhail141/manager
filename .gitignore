@@ -21,6 +21,8 @@ target/
 *.ipr
 out/
 *.config
+*.github/workflows
+*.gitignore
 
 ### NetBeans ###
 /nbproject/private/
