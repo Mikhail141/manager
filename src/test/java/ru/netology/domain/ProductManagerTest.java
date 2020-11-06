@@ -9,7 +9,9 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class ProductManagerTest {
     private ProductRepository repository = new ProductRepository();
+
     ProductManager manager = new ProductManager(repository);
+
     Product Kruso = new Book(1,"Kruso",1000, "Defo");
     Product Storm = new Book(1,"Storm",1000, "Defo");
     Product book3 = new Book(1,"book3",1000, "Author");
@@ -58,12 +60,11 @@ public class ProductManagerTest {
     }
 
     @Test
-    public void shouldsearchNameProduser() {
-        String search = "Apple";
+    public void shouldsearchNameSmartphone() {
+        String search = "Ipod";
         manager.add(Ipod);
-        manager.add(Iphone);
         Product[] actual = manager.searcyBy(search);
-        Product[] expected = new Product[]{Ipod,Iphone};
+        Product[] expected = new Product[]{Ipod};
         assertArrayEquals(expected, actual);
     }
 
