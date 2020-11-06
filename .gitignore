@@ -21,6 +21,7 @@ target/
 *.ipr
 out/
 *.config
+.github
 
 ### NetBeans ###
 /nbproject/private/
