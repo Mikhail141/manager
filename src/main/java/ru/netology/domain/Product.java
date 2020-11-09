@@ -5,6 +5,9 @@ public class Product {
     private String name;
     private int price;
 
+    private Product product;
+
+
 
 
     public Product(int id, String name, int price) {
@@ -38,5 +41,29 @@ public class Product {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+
+    public boolean matches(String search) {
+
+        if (product instanceof Book) {
+            Book book = (Book) product;
+            if (book.getName().equalsIgnoreCase(search)) {
+                return true;
+            }
+            if (book.getAuthor().equalsIgnoreCase(search)) {
+                return true;
+            }
+        }
+        if (product instanceof Smartphone) {
+            Smartphone smartphone = (Smartphone) product;
+            if (smartphone.getName().equalsIgnoreCase(search)) {
+                return true;
+            }
+            if (smartphone.getProducer().equalsIgnoreCase(search)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
