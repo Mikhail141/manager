@@ -6,6 +6,7 @@ build/
 target/
 .github
 
+
 ### STS ###
 .apt_generated
 .classpath
