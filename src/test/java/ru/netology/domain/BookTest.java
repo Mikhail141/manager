@@ -1,25 +1,53 @@
 package ru.netology.domain;
 
 import org.junit.jupiter.api.Test;
-import ru.netology.manager.ProductManager;
-import ru.netology.repository.ProductRepository;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
 public class BookTest {
-    Product Kruso = new Book(1,"Kruso",1000, "Defo");
-    Product Storm = new Book(1,"Storm",1000, "Defo");
-    Product book3 = new Book(1,"book3",1000, "Author");
-    Product book4 = new Book(1,"book4",1000, "Author");
+    Book book = new Book(1, "Kruso", 1000, "Defo");
 
-@Test
-public void searchequals(){
+    @Test
+    void shouldsearcyByName() {
+        String search = "Kruso";
+        assertTrue(book.matches(search));
+    }
 
-    Book book3 = new Book(1,"book3",1000,"Defo");
-    Book book4 = new Book(1,"book3",1000,"Defo");
+    @Test
+    void shouldsearcyByNameSmall() {
+        String search = "kruso";
+        boolean expected = true;
+        boolean actual = book.matches(search);
+        assertEquals(expected, actual);
 
+    }
 
-    assertEquals(book3,book4);
-}
+    @Test
+    void shouldsearcyByNameFolse() {
+        String search = "kru";
+        boolean expected = false;
+        boolean actual = book.matches(search);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldsearcyByAuthor() {
+        String search = "Defo";
+        assertTrue(book.matches(search));
+    }
+
+    @Test
+    void shouldsearcyByAuthorEmpity() {
+        String search = "0";
+        boolean expected = false;
+        boolean actual = book.matches(search);
+        assertEquals(expected, actual);
+
+    }
+
+    @Test
+    void shouldsearcyByOtherAuthor() {
+        String search = "Pushkin";
+        assertFalse(book.matches(search));
+    }
 }
