@@ -1,11 +1,12 @@
-package ru.netology.domain;
+package ru.netology.manager;
 
-import org.junit.jupiter.api.BeforeEach;
+
 import org.junit.jupiter.api.Test;
-import ru.netology.manager.ProductManager;
+import ru.netology.domain.Book;
+import ru.netology.domain.Product;
+import ru.netology.domain.Smartphone;
 import ru.netology.repository.ProductRepository;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-
 
 public class ProductManagerTest {
     private ProductRepository repository = new ProductRepository();
@@ -108,8 +109,4 @@ public class ProductManagerTest {
         assertArrayEquals(expected, actual);
     }
 
-
 }
-
-
-
